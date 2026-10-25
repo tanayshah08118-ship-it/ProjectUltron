@@ -49,6 +49,7 @@ print("---Predicted and Original Data---")
 print(y_hat)
 print(y_true)
 #The code when relu is not added-->
+print("-"*100) 
 for traning in range(1000):
      #Forward Pass
      Z1=Affine_forward(X,W1,b1)
@@ -70,8 +71,7 @@ for traning in range(1000):
      W2-=lr*dW2
      b1-=lr*db1
      b2-=lr*db2
-     #Print Progress every 100 steps 
-     print("-"*100)
+#Print Progress every 100 steps 
      if traning%100==0:
           print(f"Traning{traning:2d} | Loss{loss:.6f}")
 print("-"*100)
