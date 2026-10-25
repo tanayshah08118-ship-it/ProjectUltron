@@ -24,8 +24,13 @@ print(b2.shape)
 def Affine_forward(X,W1,b1):
     Z=X @ W1 +b1
     return Z
+#Adding the Relu back
+def relu(Z):
+     A=np.maximum(0,Z)
+     return A
 Z1=Affine_forward(X,W1,b1)
-Z2=Affine_forward(Z1,W2,b2)
+A1=relu(Z1)
+Z2=Affine_forward(A1,W2,b2)
 def softmax(Z):
      exp_shifted=Z-np.max(Z, axis=1,keepdims=True)
      exps=np.exp(exp_shifted)
@@ -43,6 +48,8 @@ print("-" * 100)
 print("---Predicted and Original Data---")
 print(y_hat)
 print(y_true)
+"""
+The code when relu is not added-->
 for traning in range(1000):
      #Forward Pass
      Z1=Affine_forward(X,W1,b1)
@@ -66,5 +73,31 @@ for traning in range(1000):
      b2-=lr*db2
      #Print Progress every 100 steps 
      if traning%100==0:
+          print(f"Traning{traning:2d} | Loss{loss:.6f}")"""
+#The code when relu is added-->
+for traning in range(1000):
+     #Forward Pass
+     Z1=Affine_forward(X,W1,b1)
+     A1=relu(Z1)
+     Z2=Affine_forward(A1,W2,b2)
+     y_hat=softmax(Z2)
+     #Compute Loss
+     loss = Cross_Entropy_Loss(y_hat, y_true)
+     #Backward Pass
+     batch_size = y_true.shape[0]
+     dZ2 = (y_hat - y_true) / batch_size
+     dW2 = A1.T @ dZ2
+     db2 = np.sum(dZ2, axis=0, keepdims=True)
+     dA1=dZ2 @ W2.T
+     dZ1 = dA1 *(Z1>0)
+     dW1 = X.T @ dZ1
+     db1 = np.sum(dZ1, axis=0, keepdims=True)
+     #Parameters
+     lr=0.1
+     W1-=lr*dW1
+     W2-=lr*dW2
+     b1-=lr*db1
+     b2-=lr*db2
+     #Print Progress every 100 steps 
+     if traning%100==0:
           print(f"Traning{traning:2d} | Loss{loss:.6f}")
-#Adding the Relu back
