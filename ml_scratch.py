@@ -1,5 +1,7 @@
 import numpy as np
 
+"""Deep Learning Notes"""
+
 """Linera Algebra-->"""
 input_dm=2
 hidden_dm=4
