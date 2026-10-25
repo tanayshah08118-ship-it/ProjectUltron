@@ -71,8 +71,10 @@ for traning in range(1000):
      b1-=lr*db1
      b2-=lr*db2
      #Print Progress every 100 steps 
+     print("-"*100)
      if traning%100==0:
           print(f"Traning{traning:2d} | Loss{loss:.6f}")
+print("-"*100)
 #The code when relu is added-->
 for traning in range(1000):
      #Forward Pass
