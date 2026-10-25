@@ -103,7 +103,7 @@ for traning in range(1000):
      if traning%100==0:
           print(f"Traning{traning:2d} | Loss{loss:.6f}")
 print("-" * 100)
-print("--- Final Predictions After Training (y_hat) ---")
+print("--- Final Predictions After Training ---")
 print(np.round(y_hat, 4))
-print("--- Ground Truth Answers (y_true) ---")
+print("--- Ground Truth Answers ---")
 print(y_true)
