@@ -10,7 +10,7 @@ py -3.14 -m venv .venv
 
 2}Activate the virtual environment:
 In powershell -->
-.\.venv\Scripts\Activate.ps1
+.venv\Scripts\Activate.ps1
 
 (If PowerShell gives an execution policy warning, you can run Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass first, or activate via Command Prompt with .\.venv\Scripts\activate.bat)
 
