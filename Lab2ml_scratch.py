@@ -1,5 +1,6 @@
 import numpy as np
 
+# The "Bomb Test" (Experiencing Variance Explosion)
 # The Unscaled Explosion (Naive Initialization)
 X=np.random.randn(100,64)
 W=np.random.randn(64,64)
