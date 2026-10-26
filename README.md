@@ -20,4 +20,4 @@ pip install numpy
 
 4}Verify the installation:
 In powershell -->
-python -c "import numpy; print('NumPy successfully loaded:', numpy.__version__)"
+python -c "import numpy; print('NumPy successfully loaded:', numpy.____version____)"
