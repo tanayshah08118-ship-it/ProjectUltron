@@ -3,6 +3,7 @@ How to set up your environment
 To keep your project clean and avoid modifying global system packages, create a virtual environment inside your project folder (c:\ProjectUltron) and install NumPy:
 
 Open PowerShell or Command Prompt in c:\ProjectUltron.
+
 1}Create a virtual environment:
 In powershell -->
 py -3.14 -m venv .venv
