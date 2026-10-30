@@ -10,10 +10,10 @@ b1=np.zeros((1,hidden_dm))
 b2=np.zeros((1,output_dm))
 W1 = np.random.randn(input_dm, hidden_dm) * np.sqrt(2.0 / input_dm)
 W2 = np.random.randn(hidden_dm, output_dm) * np.sqrt(2.0 / hidden_dm)
-print("                                                                                                                             ")
+print("-"*100)
 print("Shape of W1")
 print(W1.shape)
-print("                                                                                                                             ")
+print("-"*100)
 print("Shape of W2")
 print(W2.shape)
 """Affine  Transformation-->"""
@@ -24,20 +24,20 @@ def Affine_forward(X,W,b):
    Z= X @ W +b
    return Z
 Z1= Affine_forward(X,W,b)
-print("                                                                                                                             ")
+print("-"*100)
 print("Z1 shape:", Z1.shape)
 """Non-Linear Activation Function (relu)-->"""
 def relu(Z):
     A1=np.maximum(0,Z)
     return A1
 A1=relu(Z1)
-print("                                                                                                                             ")
+print("-"*100)
 print("---Before relu---")
 print(Z1)
-print("                                                                                                                             ")
+print("-"*100)
 print("---After relu---")
 print(A1)
-print("                                                                                                                             ")
+print("-"*100)
 """Step1} Passing through Layer2-->"""
 X = np.random.randn(3,input_dm)
 Z1= Affine_forward(X,W1,b1)
@@ -52,10 +52,10 @@ def softmax(Z):
     exps=np.exp(exp_shifted)
     return exps / np.sum(exps, axis=1,keepdims=True)
 y_hat= softmax(Z2)
-print("                                                                                                                             ")
+print("-"*100)
 print("---Final pridicted posibility are---")
 print(y_hat)
-print("                                                                                                                             ")
+print("-"*100)
 """Measuring How Wrong the AI Is (Cross-Entropy Loss)-->"""
 y_true=np.array([[1,0],[0,1],[1,0]])
 def cross_entropy_loss(y_pred,y_true):
@@ -65,7 +65,7 @@ def cross_entropy_loss(y_pred,y_true):
 loss=cross_entropy_loss(y_hat,y_true)
 print("---Current loss---")
 print(loss)
-print("                                                                                                                             ")
+print("-"*100)
 """The Output Mistake Signal (dZ2)-->"""
 batch_size=y_true.shape[0]
 dZ2=(y_hat-y_true) / batch_size
@@ -89,9 +89,9 @@ db1 = np.sum(dZ1, axis=0, keepdims=True)
 # 4. Check shapes
 print("--- Layer 1 Gradients ---")
 print("Shape of dW1:", dW1.shape)
-print("                                                                                                                             ")
+print("-"*100)
 print("Shape of db1:", db1.shape)
-print("                                                                                                                             ")
+print("-"*100)
 """Turning the Knobs (Gradient Descent)-->"""
 #Learning Rate(lr)-->
 lr=0.1
