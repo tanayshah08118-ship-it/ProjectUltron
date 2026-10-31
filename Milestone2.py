@@ -295,4 +295,4 @@ for epoch in range(100):
         print(f"Epoch {epoch:2d} | Loss: {loss.data:.6f}")
 print("-" * 100)
 print("Targets:    ", ys)
-print("Predictions:", [round(p.data, 4) for p in ypred])
+print("Predictions:", [round(p.data, 4) for p in ypred])    
