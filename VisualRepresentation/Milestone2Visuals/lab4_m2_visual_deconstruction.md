@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The 37-Parameter MLP Architecture
+## 1. The 37-Parameter MLP Architecture
 
 In Lab 4, we evaluated the full 3-layer neural network `MLP(2, [4, 4, 1])`:
 
@@ -49,7 +49,7 @@ graph LR
 
 ---
 
-## 1. The Light Switch Mechanics of ReLU
+## 2. The Light Switch Mechanics of ReLU
 
 Mathematically, ReLU acts as a one-way electrical gate:
 $$\text{ReLU}(z) = \max(0, z)$$
@@ -64,7 +64,7 @@ def _backward():
 
 ---
 
-## 2. Experiment A: Inducing Total Brain Death (`nonlin=True` on Output)
+## 3. Experiment A: Inducing Total Brain Death (`nonlin=True` on Output)
 
 When the **output neuron** of the network is forced to use ReLU:
 ```python
@@ -108,7 +108,7 @@ Because the output gate itself multiplied the incoming gradient by `0.0`, **not 
 
 ---
 
-## 3. Experiment B: The Linear Output Rescue (`nonlin=False`)
+## 4. Experiment B: The Linear Output Rescue (`nonlin=False`)
 
 To rescue the network, modern AI architectures keep the final layer **linear**:
 ```python
@@ -155,7 +155,7 @@ Because the output door is wide open, gradients successfully enter the hidden la
 
 ---
 
-## 4. Architectural Summary: Modern Deep Learning Convention
+## 5. Architectural Summary: Modern Deep Learning Convention
 
 | Layer Type | Activation | Why? |
 | :--- | :--- | :--- |

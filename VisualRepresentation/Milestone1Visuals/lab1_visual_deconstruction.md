@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Complete Neural Network Node Architecture (2-4-2 Graph)
+## 1. The Complete Neural Network Node Architecture (2-4-2 Graph)
 
 Here is the exact blueprint of the physical network you built in code, showing every individual neuron, weight connection, bias, and activation function:
 
@@ -61,7 +61,7 @@ Look at a single hidden neuron, say **$h_1$**:
 
 ---
 
-## 1. The Core Mystery: The 2D Geometry of XOR
+## 2. The Core Mystery: The 2D Geometry of XOR
 
 Look at the 4 data points of XOR plotted on a 2D coordinate grid:
 
@@ -94,7 +94,7 @@ It **bent and folded the coordinate system into 4 dimensions** ($D_{hidden} = 4$
 
 ---
 
-## 2. The Dimensional Architecture: "Students & Detectives"
+## 3. The Dimensional Architecture: "Students & Detectives"
 
 Here is how data and weights interacted inside your network during Lab 1:
 
@@ -147,7 +147,7 @@ flowchart LR
 
 ---
 
-## 3. The Math of Linear Collapse (Why Skipping ReLU Broke the AI)
+## 4. The Math of Linear Collapse (Why Skipping ReLU Broke the AI)
 
 When you connected Layer 1 directly to Layer 2 without `relu`:
 $$\mathbf{Z}_1 = \mathbf{X} \mathbf{W}_1 + \mathbf{b}_1$$
@@ -164,7 +164,7 @@ Notice the collapse:
 
 ---
 
-## 4. Deconstructing the Softmax Function
+## 5. Deconstructing the Softmax Function
 
 Why did we write `softmax` the way we did?
 
@@ -182,7 +182,7 @@ flowchart TD
 
 ---
 
-## 5. Deconstructing Cross-Entropy Loss
+## 6. Deconstructing Cross-Entropy Loss
 
 $$\mathcal{L} = -\frac{1}{B} \sum_{i=1}^B \sum_{k=1}^C y_{i, k} \log(\hat{y}_{i, k} + \epsilon)$$
 
@@ -199,7 +199,7 @@ Model Confidence in Correct Answer:    Loss Penalty:
 
 ---
 
-## 6. The Backward Pass Highway (Chain Rule)
+## 7. The Backward Pass Highway (Chain Rule)
 
 During the backward pass, gradients flowed backwards through the exact reverse sequence:
 
@@ -225,7 +225,7 @@ sequenceDiagram
 
 ---
 
-## 7. The Loop Body (Why Indentation Saved the Model)
+## 8. The Loop Body (Why Indentation Saved the Model)
 
 ```mermaid
 flowchart TD

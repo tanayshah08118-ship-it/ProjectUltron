@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Problem: How Does an Unsupervised LLM Learn to Speak?
+## 1. The Problem: How Does an Unsupervised LLM Learn to Speak?
 
 Raw text in nature does not come with labeled pairs like $(x = \text{image}, y = \text{cat})$. It is simply a continuous stream of characters or words: `"hello"`.
 
@@ -33,7 +33,7 @@ flowchart TD
 
 ---
 
-## 1. Mathematical Formulation: The Autoregressive Chain Rule
+## 2. Mathematical Formulation: The Autoregressive Chain Rule
 
 Language modeling is framed as estimating the **joint probability distribution** of a sequence of tokens $W = (w_1, w_2, \dots, w_T)$.
 
@@ -49,7 +49,7 @@ The network would trivially learn to read the answer off the attention weights r
 
 ---
 
-## 2. Empirical Lab Results: Side-by-Side Comparison
+## 3. Empirical Lab Results: Side-by-Side Comparison
 
 In [`Lab1M4ml_scratch.py`](file:///c:/ProjectUltron/Milestone4Lab/Lab1M4ml_scratch.py), we trained two identical models from the exact same random initialization (`np.random.seed(42)`):
 
@@ -82,7 +82,7 @@ flowchart LR
 
 ---
 
-## 3. Deep Dive: Why Did Experiment B Fail Despite Low Loss ($0.1719$)?
+## 4. Deep Dive: Why Did Experiment B Fail Despite Low Loss ($0.1719$)?
 
 Notice that in Experiment B, the loss smoothly dropped to **`0.1719`**. The model **successfully learned its training objective**!
 
@@ -126,7 +126,7 @@ stateDiagram-v2
 
 ---
 
-## 4. Key Takeaways & Engineering Rules
+## 5. Key Takeaways & Engineering Rules
 
 > [!IMPORTANT]
 > **Rule 1: Training Causality Must Mirror Inference Rollout**

@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Problem: The Exponential Variance Explosion
+## 1. The Problem: The Exponential Variance Explosion
 
 In deep neural networks (like a 32-layer Llama model), activations pass through dozens of consecutive matrix multiplications:
 $$\mathbf{x}_{l+1} = \mathbf{x}_l W_l$$
@@ -38,7 +38,7 @@ flowchart TD
 
 ---
 
-## 1. RMSNorm vs Classic LayerNorm: The Mathematical Difference
+## 2. RMSNorm vs Classic LayerNorm: The Mathematical Difference
 
 ### Classic LayerNorm (Ba et al., 2016):
 Calculates **both** the mean $\mu$ and the variance $\sigma^2$:
@@ -73,7 +73,7 @@ graph TD
 
 ---
 
-## 2. Experimental Architecture for Lab 2
+## 3. Experimental Architecture for Lab 2
 
 In `Lab2M3ml_scratch.py`:
 1. **Experiment 1 (The Uncontrolled Deep Network)**:

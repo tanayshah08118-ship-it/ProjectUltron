@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Diamond DAG Architecture
+## 1. The Diamond DAG Architecture
 
 In Lab 3, we constructed a **Diamond Computational Graph** where an input node $x$ fans out into two parallel paths and recombines at an output gate:
 
@@ -43,7 +43,7 @@ graph LR
 
 ---
 
-## 1. Mathematical Ground Truth (High School Calculus)
+## 2. Mathematical Ground Truth (High School Calculus)
 
 To know whether our autograd engine is correct, we solve the algebraic equation by hand:
 
@@ -58,7 +58,7 @@ $$\frac{dL}{dx} = 8(2.0) + 12 = 16.0 + 12.0 = \mathbf{28.0}$$
 
 ---
 
-## 2. The Execution Order Experiment: Reverse vs. Forward
+## 3. The Execution Order Experiment: Reverse vs. Forward
 
 The central question of Lab 3 was: **Why can't we loop through nodes in arbitrary or forward order?**
 
@@ -98,7 +98,7 @@ X gradiant 0.0   <-- (TOTAL DERIVATIVE BLACKOUT!)
 
 ---
 
-## 3. How Depth-First Search (DFS) Guarantees Correct Order
+## 4. How Depth-First Search (DFS) Guarantees Correct Order
 
 The algorithm implemented inside `backward()` uses recursion to guarantee that no node is processed until its dependencies are satisfied:
 
@@ -130,7 +130,7 @@ sequenceDiagram
 
 ---
 
-## 4. Summary: The Shoes and Socks Rule
+## 5. Summary: The Shoes and Socks Rule
 
 | Execution Step | Forward Pass | Backward Pass | What Happens if Violated |
 | :--- | :--- | :--- | :--- |

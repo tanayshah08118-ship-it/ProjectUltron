@@ -3,7 +3,7 @@
 
 ---
 
-## 0. Overview: The Modern Computation and Decoding Architecture
+## 1. Overview: The Modern Computation and Decoding Architecture
 
 In **Lab 4**, we stress-test the two mechanisms that govern how Transformers process features and speak text:
 1. **The SwiGLU Gating Mechanism (Stage 5)**: Why modern frontier models (LLaMA 3, Gemma, Mistral) replaced standard ReLU/GELU with a 3-matrix multiplicative valve.
@@ -11,7 +11,7 @@ In **Lab 4**, we stress-test the two mechanisms that govern how Transformers pro
 
 ---
 
-## 1. Experiment 1: The SwiGLU Valve (Feature Filtering)
+## 2. Experiment 1: The SwiGLU Valve (Feature Filtering)
 
 In traditional MLPs, an activation function operates on a single linear projection:
 $$\text{Output} = \text{ReLU}(x W_1) W_2$$
@@ -49,7 +49,7 @@ graph TD
 
 ---
 
-## 2. Experiment 2 & 3: The Greedy Repetition Trap vs Temperature
+## 3. Experiment 2 & 3: The Greedy Repetition Trap vs Temperature
 
 ### Why did Milestone 3 loop `"hzorhzohzo"`?
 With **Greedy Decoding** (`next_id = np.argmax(probs)`):
@@ -68,7 +68,7 @@ stateDiagram-v2
 
 ---
 
-## 3. The Solution: Temperature-Scaled Multinomial Sampling
+## 4. The Solution: Temperature-Scaled Multinomial Sampling
 
 Instead of picking the absolute maximum, we sample from the probability distribution using **Temperature ($T$)**:
 $$P(y_i) = \frac{\exp(z_i / T)}{\sum_j \exp(z_j / T)}$$

@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Pipeline Architecture: The 4-Node Chain
+## 1. The Pipeline Architecture: The 4-Node Chain
 
 In Lab 2, we built and tested a two-stage computational graph:
 $$d = a \cdot b$$
@@ -20,7 +20,7 @@ Given the initial values:
 
 ---
 
-## 1. Case A: The Healthy Graph (Full Ancestry Memory)
+## 2. Case A: The Healthy Graph (Full Ancestry Memory)
 
 In the healthy engine, every mathematical gate registers its parents in `_children`:
 ```python

@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Problem: Self-Attention is a Bag-of-Words
+## 1. The Problem: Self-Attention is a Bag-of-Words
 
 Standard neural networks (like MLPs or CNNs) process inputs at fixed coordinates or spatial grids. 
 
@@ -36,7 +36,7 @@ flowchart TD
 
 ---
 
-## 1. Mathematical Proof of Permutation Invariance
+## 2. Mathematical Proof of Permutation Invariance
 
 Let $X = [\mathbf{x}_1, \dots, \mathbf{x}_T]^T \in \mathbb{R}^{T \times D}$ be the matrix of token embeddings. 
 Let $P \in \{0, 1\}^{T \times T}$ be any permutation matrix (which reorders the rows of $X$).
@@ -60,7 +60,7 @@ The model has **zero understanding of grammar, syntax, or direction** without an
 
 ---
 
-## 2. The Solution: Learned Positional Embeddings ($W_{pe}$)
+## 3. The Solution: Learned Positional Embeddings ($W_{pe}$)
 
 To break the symmetry, we introduce a dedicated position table:
 $$W_{pe} \in \mathbb{R}^{T_{\text{max}} \times D}$$
@@ -85,7 +85,7 @@ graph LR
 
 ---
 
-## 3. Experimental Architecture for Lab 1
+## 4. Experimental Architecture for Lab 1
 
 In `Lab1M3_scratch.py`, we run two controlled experiments:
 

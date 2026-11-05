@@ -3,7 +3,7 @@
 
 ---
 
-## 0. Overview: The Two Fatal Failure Modes of Attention
+## 1. Overview: The Two Fatal Failure Modes of Attention
 
 Self-Attention computes the interaction between all token pairs:
 $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{Q K^T}{\sqrt{d_k}} + M\right) V$$
@@ -14,7 +14,7 @@ In this lab, we isolate and stress-test two mathematical mechanisms that prevent
 
 ---
 
-## 1. Experiment 1: The Future Cheating Trap (Unmasked vs Masked)
+## 2. Experiment 1: The Future Cheating Trap (Unmasked vs Masked)
 
 In an autoregressive Large Language Model, tokens are generated one at a time. Token $t$ must predict token $t+1$ based **only** on tokens $0 \dots t$.
 
@@ -42,7 +42,7 @@ The future tokens receive **$0.0000\%$** attention probability, making future in
 
 ---
 
-## 2. Experiment 2: The $\sqrt{d_k}$ Scaling Trap (Entropy Collapse)
+## 3. Experiment 2: The $\sqrt{d_k}$ Scaling Trap (Entropy Collapse)
 
 ### Why do we divide by $\sqrt{d_k}$?
 Let $\mathbf{q}, \mathbf{k} \in \mathbb{R}^{d_k}$ be random normal vectors with mean $0$ and variance $1$:

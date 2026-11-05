@@ -3,7 +3,7 @@
 
 ---
 
-## 0. The Architecture of a Computational DAG Node
+## 1. The Architecture of a Computational DAG Node
 
 Every variable in an autograd engine is not just a raw number—it is a **node in a Directed Acyclic Graph (DAG)**. 
 
@@ -36,7 +36,7 @@ graph TD
 
 ---
 
-## 1. Experiment 1: The Accumulation Trap (`+=` vs `=`)
+## 2. Experiment 1: The Accumulation Trap (`+=` vs `=`)
 
 One of the most insidious bugs in autograd engines is using `=` instead of `+=` inside `_backward()`.
 
@@ -87,7 +87,7 @@ Result: x.grad = 2.0  <-- MATHEMATICALLY EXACT! Both branches accounted for!
 
 ---
 
-## 2. Experiment 2: Graph Amnesia (The Disconnected DAG)
+## 3. Experiment 2: Graph Amnesia (The Disconnected DAG)
 
 What happens if a programmer forgets to pass `_children` when creating an output node?
 
@@ -129,7 +129,7 @@ graph LR
 
 ---
 
-## 3. Experiment 3: The Closure Backpack (The Timing Dilemma)
+## 4. Experiment 3: The Closure Backpack (The Timing Dilemma)
 
 Why do we write `out._backward = _backward` without parentheses `()`?
 
@@ -171,7 +171,7 @@ out._backward = _backward()  # <--- Parentheses added during forward pass!
 
 ---
 
-## 4. Summary: The 3 Golden Rules of Autograd
+## 5. Summary: The 3 Golden Rules of Autograd
 
 | Rule | The Code | Why It Is Mandatory |
 | :--- | :--- | :--- |
