@@ -157,8 +157,8 @@ Substituting $\mathbf{Z}_1$ directly into $\mathbf{Z}_2$:
 $$\mathbf{Z}_2 = (\mathbf{X} \mathbf{W}_1 + \mathbf{b}_1) \mathbf{W}_2 + \mathbf{b}_2 = \mathbf{X} (\mathbf{W}_1 \mathbf{W}_2) + (\mathbf{b}_1 \mathbf{W}_2 + \mathbf{b}_2)$$
 
 Notice the collapse:
-- $(\mathbf{W}_1 \mathbf{W}_2)$ is just a single $(2 \times 2)$ matrix $\mathbf{W}_{\text{collapsed}}$.
-- $(\mathbf{b}_1 \mathbf{W}_2 + \mathbf{b}_2)$ is just a single $(1 \times 2)$ vector $\mathbf{b}_{\text{collapsed}}$.
+$(\mathbf{W}_1 \mathbf{W}_2)$ is just a single $(2 \times 2)$ matrix $\mathbf{W}_{\text{collapsed}}$.
+$(\mathbf{b}_1 \mathbf{W}_2 + \mathbf{b}_2)$ is just a single $(1 \times 2)$ vector $\mathbf{b}_{\text{collapsed}}$.
 
 > **The Lesson**: No matter how many linear layers you stack, they mathematically collapse into a single straight line. **Non-linearity (ReLU) is what makes a neural network "deep".**
 
